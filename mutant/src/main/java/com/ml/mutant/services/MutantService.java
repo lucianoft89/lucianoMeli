@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.text.DecimalFormat;
 
 @Service
-public class MutantServices implements MutantServicesCall {
+public class MutantService implements MutantServicesCall {
 
     @Autowired
     MutantComponent mutantComponent;

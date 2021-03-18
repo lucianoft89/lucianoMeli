@@ -31,27 +31,29 @@ public class MutantComponent {
     //CheckDNA - Toma el json y realice unas pruebas, que determinan si cumple con las especificaciones Dimension: NxN, Unicamente Caracteres: 'A’, ‘C’,’G’ y ’T'
     public static String [] checkDNA (JSONArray array){
         String[] arr = new String[array.length()];
-        System.out.println("Linea:"+ arr[0]);
         //control_A, Detecta que la DNA no este vacia y tenga mas de una fila,
-        if (arr.length<=1){
+        if (arr.length<=4){
+            System.out.println("Magneto! - esta no es un ADN, imposible de testear, puede ser que este vacia o no cumpla con el minimo de la estructura");
             return null;
         }
         //control_B, Detecta que la DNA tiene la estructura NxN,
-        /*System.out.println(arr[0]);
-        System.out.println(arr.length);
+        /*
+        String aux = null;
         if (aux.length()!=arr.length){
+            System.out.println("");
+            System.out.println("Magneto! - la estructura dimensional de este ADN no es correcta, no es una NxN");
             return null;
-        }*/
+        }
         //control_C, Detecta que la DNA tenga solamente los caracteres A’, ‘C’,’G’ y ’T
-        //System.out.println("aux = " + aux);
         for (int i = 0; i < arr.length; i++) {
             for (int k = 0; k < arr[i].length(); k++){
                 char letra = arr[i].charAt(k);
                 if (letra != 'A' || letra != 'C'|| letra != 'G'|| letra != 'T' ) {
+                    System.out.println("Magneto el ADN, no pertenece ni a un humano ni a un mutante ya que tiene otros caracteres, ¿sera un super mutante?");
                     return null;
                 }
             }
-        }
+        }*/
         for(int i=0; i<arr.length; i++) {
             arr[i]=array.optString(i);
         }

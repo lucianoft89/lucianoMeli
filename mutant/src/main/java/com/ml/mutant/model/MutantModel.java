@@ -3,7 +3,7 @@ package com.ml.mutant.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="dna")
+@Table(name="dna_test")
 public class MutantModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
