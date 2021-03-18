@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
-public class MutantController {
+public class MutantController<MutantServices> {
 
     @Autowired
     private MutantServices mutantServices;
@@ -25,9 +25,9 @@ public class MutantController {
         boolean result = mutantServices.isMutant(jsonBody);
         headers.setContentType(MediaType.TEXT_PLAIN);
         if (result ){
-            return new ResponseEntity<>("Sr. Magneto: Buenas noticias! Encontramos un mutante",headers, HttpStatus.OK);
+            return new ResponseEntity<>("Magneto: Excelentes noticias! Encontramos un mutante",headers, HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("Sr. Magneto: Malas noticias! El DNA procesado no es mutante.",headers, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Magneto: El DNA procesado no es mutante.",headers, HttpStatus.FORBIDDEN);
         }
     }
     // boolean result = mutantServices.isMutant(jsonBody);
